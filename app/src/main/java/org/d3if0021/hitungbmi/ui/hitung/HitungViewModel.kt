@@ -14,7 +14,8 @@ import org.d3if0021.hitungbmi.db.BmiDao
 import org.d3if0021.hitungbmi.db.BmiEntity
 
 // class HitungViewModel : ViewModel() {
-class HitungViewModel(private val db: BmiDao) : ViewModel() {
+//class HitungViewModel(private val db: BmiDao) : ViewModel() {
+class HistoriViewModel(private val db: BmiDao) : ViewModel() {
 
     // Hasil BMI bisa null jika pengguna belum menghitung BMI
     private val hasilBmi = MutableLiveData<HasilBmi?>()
@@ -25,6 +26,11 @@ class HitungViewModel(private val db: BmiDao) : ViewModel() {
 //    /Variabel ini sudah berupa LiveData (tidak mutable),
 //    sehingga tidak perlu dijadikan private
 //    val data = db.getLastBmi()
+    fun hapusData() = viewModelScope.launch {
+        withContext(Dispatchers.IO) {
+            db.clearData()
+        }
+    }
 
     fun hitungBmi(berat: String, tinggi: String, isMale: Boolean) {
 //        val tinggiCm = tinggi.toFloat() / 100

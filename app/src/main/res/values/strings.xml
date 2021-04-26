@@ -45,4 +45,8 @@ reserved.</string>
 cm\nJenis kelamin: %3$s\n\n%4$s\n%5$s</string>
     <string name="belum_ada_data">Belum ada data</string>
     <string name="histori">Histori</string>
+    <string name="hapus_histori">Hapus Histori</string>
+    <string name="konfirmasi_hapus">Hapus semua histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
 </resources>

@@ -9,8 +9,8 @@ class HitungViewModelFactory(
 ) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HitungViewModel::class.java)) {
-            return HitungViewModel(db) as T
+        if (modelClass.isAssignableFrom(HistoriViewModel::class.java)) {
+            return HistoriViewModel(db) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
